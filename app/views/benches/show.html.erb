@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
 <%= image_tag @bench.picture.url(:medium)%>
-<%= @bench.longitude %> <%= @bench.latitude %>
+<%= @bench.longitude %> <%= @bench.latitude %> <%= @bench.image_direction %>
 <%= link_to 'Edit', edit_bench_path(@bench) %> |
 <%= link_to 'Back', benches_path %>

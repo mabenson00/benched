@@ -3,6 +3,7 @@ class CreateBenches < ActiveRecord::Migration[5.0]
     create_table :benches do |t|
     	t.float :latitude
     	t.float :longitude
+    	t.float :image_direction
     	t.integer :rating
       t.timestamps
     end

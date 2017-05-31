@@ -38,13 +38,13 @@ class BenchesController < ApplicationController
   # POST /benches.json
   def create
     @bench = Bench.new(bench_params)
-    
-
+    url = @bench.picture.url[/(^.*)(?=\?)/] #cuts the trailing ?identifier
     respond_to do |format|
       if @bench.save
         url = @bench.picture.url[/(^.*)(?=\?)/] #cuts the trailing ?identifier
         @bench.longitude = EXIFR::JPEG.new("#{Rails.root}/public#{url}").gps.longitude
         @bench.latitude = EXIFR::JPEG.new("#{Rails.root}/public#{url}").gps.latitude
+        @bench.image_direction = EXIFR::JPEG.new("#{Rails.root}/public#{url}").gps.image_direction
         @bench.save
         format.html { redirect_to @bench, notice: 'Bench was successfully created.' }
         format.json { render :show, status: :created, location: @bench }

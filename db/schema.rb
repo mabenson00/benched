@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170530155410) do
   create_table "benches", force: :cascade do |t|
     t.float    "latitude"
     t.float    "longitude"
+    t.float    "image_direction"
     t.integer  "rating"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
