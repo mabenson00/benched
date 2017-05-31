@@ -1,0 +1,5 @@
+<%= simple_form_for @bench, url: benches_path do |form| %>
+  <%= form.input :picture, as: :file %>
+  <%= form.input :rating %>
+  <%= form.button :submit %>
+<% end %>
