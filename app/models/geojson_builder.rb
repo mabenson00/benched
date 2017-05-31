@@ -10,7 +10,9 @@ class GeojsonBuilder
       properties: {
         rating: bench.rating,
         url: bench.picture.url(:thumb),
-        icon: "harbor"
+        :"marker-color" => "#FFFFFF",
+        :"marker-symbol" => "prison",
+        :"marker-size" => "medium",
       }
     }
     return geojson
