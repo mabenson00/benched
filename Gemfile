@@ -21,6 +21,8 @@ gem "paperclip", "~> 5.0.0"
 #Use simple form for forms
 gem 'simple_form'
 
+gem 'httparty'
+
 gem 'exifr'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes

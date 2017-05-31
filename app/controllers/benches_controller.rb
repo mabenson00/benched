@@ -1,4 +1,5 @@
 class BenchesController < ApplicationController
+  include BenchesHelper
   before_action :set_bench, only: [:show, :edit, :update, :destroy]
 
   # GET /benches
@@ -45,6 +46,7 @@ class BenchesController < ApplicationController
         @bench.longitude = EXIFR::JPEG.new("#{Rails.root}/public#{url}").gps.longitude
         @bench.latitude = EXIFR::JPEG.new("#{Rails.root}/public#{url}").gps.latitude
         @bench.image_direction = EXIFR::JPEG.new("#{Rails.root}/public#{url}").gps.image_direction
+        get_address(@bench, @bench.latitude, @bench.longitude)
         @bench.save
         format.html { redirect_to @bench, notice: 'Bench was successfully created.' }
         format.json { render :show, status: :created, location: @bench }

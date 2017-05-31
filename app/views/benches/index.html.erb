@@ -1,26 +1,5 @@
-<p id="notice"><%= notice %></p>
 <h1>Benches</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @benches.each do |bench| %>
-      <tr>
-        
-        <td> <%= bench.picture %></td>
-        <td><%= link_to 'Show', bench %></td>
-        <td><%= link_to 'Edit', edit_bench_path(bench) %></td>
-        <td><%= link_to 'Destroy', bench, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
  <div id="map"></div>
-<br>
+<pre id='coordinates' class='ui-coordinates'></pre>
 
-<%= link_to 'New Bench', new_bench_path %>

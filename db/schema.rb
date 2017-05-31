@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170530155410) do
     t.float    "longitude"
     t.float    "image_direction"
     t.integer  "rating"
+    t.string   "address"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "picture_file_name"

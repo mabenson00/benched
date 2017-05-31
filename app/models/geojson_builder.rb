@@ -5,14 +5,13 @@ class GeojsonBuilder
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [bench.longitude, bench.latitude]
+        coordinates: [bench.longitude, bench.latitude],
+        angle: bench.image_direction
       },
       properties: {
         rating: bench.rating,
         url: bench.picture.url(:thumb),
-        :"marker-color" => "#FFFFFF",
-        :"marker-symbol" => "prison",
-        :"marker-size" => "medium",
+        icon: "harbor"
       }
     }
     return geojson
